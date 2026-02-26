@@ -1,7 +1,12 @@
+//import { useState } from "react";
+import "./App.css";
+
 function App() {
   return (
-    <div>
-      <h1>Hello React 🚀</h1>
+    <div className="container">
+      <div className ="box">
+        <h1>Hello React 🚀</h1>
+      </div>
     </div>
   );
 }

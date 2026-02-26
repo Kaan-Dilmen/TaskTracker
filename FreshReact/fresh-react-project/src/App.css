@@ -37,6 +37,19 @@
   padding: 2em;
 }
 
+.container{
+  display: flex;
+  place-items: start center;
+  height: 100vh;
+  border: 2px solid red;
+}
+
+.box{
+  width: 400px;
+  height: 200px;
+    border: 2px solid blue;
+}
+
 .read-the-docs {
   color: #888;
 }

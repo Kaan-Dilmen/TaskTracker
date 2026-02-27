@@ -55,6 +55,15 @@
   border: 2px solid blue;
 }
 
+.button {
+  margin-left: 20px;
+}
+
+.completed{
+  margin-left: 20px;
+  background-color: green;
+}
+
 .input{
   margin-right: 20px;
 }

@@ -12,6 +12,7 @@ function App() {
       {
         id: Date.now(),
         text: value,
+        completed: false,
       }]);
 
     setValue("");
@@ -19,6 +20,14 @@ function App() {
 
   function handleDelete(id){
     setTasks(tasks.filter(task => task.id !== id));
+  }
+
+  function handleCompleted(id){
+    setTasks(
+      tasks.map(task => 
+        task.id === id? {...task, completed : !task.completed} : task
+      )
+    );
   }
 
   return (
@@ -48,6 +57,11 @@ function App() {
           {tasks.map((task) => (
             <li key={task.id}>
               {task.text}
+              {/*Mark Complete Button*/}
+              <button className={task.completed ? "completed" : "button"} onClick={() => handleCompleted(task.id)}>
+              Mark Complete
+            </button>
+            {/*Delete Button*/}
             <button className="button" onClick={() => handleDelete(task.id)}>
               Delete
             </button>

@@ -43,6 +43,12 @@
   border: 2px solid red;
 }
 
+.listContainer{
+  display: flex;
+  justify-content: center;
+  border: 2px solid green;
+}
+
 .box{
   width: 400px;
   height: 200px;

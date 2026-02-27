@@ -14,24 +14,33 @@ function App() {
   return (
     <div className="container">
       <div className="box">
+        {/*Main Header*/}
         <h1>Task Tracker 🚀</h1>
-        <input className="input"
+
+        {/*Input Field*/}
+        <input
+          className="input"
           type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Enter a task"
         />
 
+        {/*Add Button*/}
         <button className="button" onClick={handleAddTask}>
           Add Task
         </button>
+      </div>      
+
+      <div className="listContainer">
+        {/*List*/}
+        <ul>
+          {tasks.map((task, index) => (
+            <li key={index}>{task}</li>
+          ))}
+        </ul>
       </div>
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>{task}</li>
-        ))}
-      </ul>
-    </div>
+    </div>    
   );
 }
 

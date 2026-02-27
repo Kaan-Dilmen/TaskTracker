@@ -7,8 +7,18 @@ function App() {
 
   function handleAddTask() {
     if (value.trim() === "") return;
-    setTasks([...tasks, value]);
+
+    setTasks([...tasks, 
+      {
+        id: Date.now(),
+        text: value,
+      }]);
+
     setValue("");
+  }
+
+  function handleDelete(id){
+    setTasks(tasks.filter(task => task.id !== id));
   }
 
   return (
@@ -35,8 +45,13 @@ function App() {
       <div className="listContainer">
         {/*List*/}
         <ul>
-          {tasks.map((task, index) => (
-            <li key={index}>{task}</li>
+          {tasks.map((task) => (
+            <li key={task.id}>
+              {task.text}
+            <button className="button" onClick={() => handleDelete(task.id)}>
+              Delete
+            </button>
+            </li>
           ))}
         </ul>
       </div>

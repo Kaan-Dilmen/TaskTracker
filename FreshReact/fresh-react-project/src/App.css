@@ -49,6 +49,10 @@
   border: 2px solid blue;
 }
 
+.input{
+  margin-right: 20px;
+}
+
 .read-the-docs {
   color: #888;
 }

@@ -7,7 +7,7 @@ function App() {
 
   function handleAddTask() {
     if (value.trim() === "") return;
-    setTasks([tasks, value]);
+    setTasks([...tasks, value]);
     setValue("");
   }
 
@@ -15,7 +15,7 @@ function App() {
     <div className="container">
       <div className="box">
         <h1>Task Tracker 🚀</h1>
-        <input
+        <input className="input"
           type="text"
           value={value}
           onChange={(e) => setValue(e.target.value)}

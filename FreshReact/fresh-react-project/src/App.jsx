@@ -13,6 +13,7 @@ function App() {
         id: Date.now(),
         text: value,
         completed: false,
+        isEditing: false
       }]);
 
     setValue("");
@@ -26,6 +27,14 @@ function App() {
     setTasks(
       tasks.map(task => 
         task.id === id? {...task, completed : !task.completed} : task
+      )
+    );
+  }
+
+  function handleEditing(id){
+    setTasks(
+      tasks.map(task =>
+        task.id === id? {...task, isEditing : !task.isEditing} : task
       )
     );
   }
@@ -64,6 +73,10 @@ function App() {
             {/*Delete Button*/}
             <button className="button" onClick={() => handleDelete(task.id)}>
               Delete
+            </button>
+            {/*Edit Button*/}
+            <button className="button" onClick={() => handleEditing(task.id)}>
+              Edit Task
             </button>
             </li>
           ))}
